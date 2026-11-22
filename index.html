@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suhana · Data Analytics &amp; Technology</title>
+<meta name="description" content="Suhana, BSc Mathematics and Computer Science student training in Data Analytics and Data Science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#101010;--ch:#171717;--iv:#F3EFE5;--gr:#C7C7C7;--li:#D4FF45;--la:#A78BFA;--or:#FF784F;
+--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--hand:'Caveat','Comic Sans MS',cursive;--sb:116px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bk);color:var(--iv);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--li);outline-offset:3px}
+.hand{font-family:var(--hand);font-weight:700}
+.skip{position:absolute;left:-999px;top:8px;background:var(--li);color:var(--bk);padding:8px 14px;z-index:99}.skip:focus{left:8px}
+
+/* sidebar */
+.sb{position:fixed;inset:0 auto 0 0;width:var(--sb);border-right:1px solid #2a2a2a;background:var(--bk);z-index:50;padding:34px 0 28px 28px;display:flex;flex-direction:column;justify-content:space-between}
+.logo{font:700 40px/1 var(--serif);color:var(--li);text-decoration:none;font-style:italic}
+.sb nav{position:relative;display:flex;flex-direction:column;gap:6px;padding-left:2px;margin-top:40px;flex:1}
+.sb nav::before{content:"";position:absolute;left:3px;top:0;bottom:30px;width:1px;background:#333}
+.sb nav i{position:absolute;left:3px;top:0;width:1px;height:0;background:var(--li)}
+.sb nav a{position:relative;font-size:13.5px;text-decoration:none;color:var(--gr);padding:7px 0 7px 22px;transition:color .2s,transform .2s}
+.sb nav a::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--bk);border:1px solid #555;transition:.25s}
+.sb nav a:hover{color:var(--iv);transform:translateX(3px)}
+.sb nav a.on{color:var(--li);font-weight:700}.sb nav a.on::before{background:var(--li);border-color:var(--li);box-shadow:0 0 0 4px rgba(212,255,69,.15)}
+.soc{display:flex;flex-direction:column;gap:14px}
+.soc a{width:22px;height:22px;color:var(--gr);transition:color .2s,transform .2s}.soc a:hover{color:var(--li);transform:scale(1.15)}
+.soc svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7}
+.mb{display:none}
+main,footer{margin-left:var(--sb)}
+section{position:relative;overflow:hidden;padding:clamp(70px,9vw,120px) clamp(22px,5vw,72px);border-bottom:1px solid #262626}
+section:nth-of-type(even){background:var(--ch)}
+.pill{display:inline-block;border:1.5px solid var(--li);color:var(--li);border-radius:99px;padding:2px 14px;font-size:13px;font-weight:700;margin-bottom:16px}
+h2{font:700 clamp(38px,5vw,66px)/1.02 var(--serif);letter-spacing:-.01em}
+h2 em,h1 em{font-style:italic;color:var(--li)}
+.star{position:absolute;color:var(--li);pointer-events:none;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(.6) rotate(20deg);opacity:.6}}
+.blob{position:absolute;border-radius:50%;background:var(--la);pointer-events:none}
+.btn{display:inline-flex;gap:10px;align-items:center;padding:14px 26px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--iv);transition:transform .2s,background .2s,color .2s}
+.btn.pr{background:var(--li);color:var(--bk);border-color:var(--li)}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}.btn.pr:hover{background:var(--iv);border-color:var(--iv)}.btn.gh:hover{background:var(--iv);color:var(--bk)}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:30px;background:var(--bk)!important}
+.hero h1{font:700 clamp(80px,11.5vw,170px)/.9 var(--serif);letter-spacing:-.03em;position:relative;display:inline-block}
+.hero h1 svg{position:absolute;left:0;bottom:-14px;width:100%;height:24px;fill:none;stroke:var(--li);stroke-width:5;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:dr 1.2s .9s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.hero h1 .m{display:block;overflow:hidden;padding-bottom:.06em}.hero h1 .m b{display:block;font-weight:700;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) .2s forwards}
+@keyframes up{to{transform:none}}
+.hero h2{font:italic 500 clamp(30px,3.6vw,52px)/1.08 var(--serif);margin-top:34px;max-width:12em}
+.hero h2 span{display:block;overflow:hidden}.hero h2 span i{display:block;font-style:inherit;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h2 span:nth-child(2) i{animation-delay:.45s}.hero h2 span:nth-child(3) i{animation-delay:.6s}.hero h2 span:nth-child(1) i{animation-delay:.3s}
+.hero p.in{max-width:36ch;color:var(--gr);margin-top:22px}
+.coll{position:relative;height:min(70vh,560px);min-height:380px;will-change:transform}
+.polar{position:absolute;left:12%;top:12%;width:68%;background:var(--iv);padding:14px 14px 40px;transform:rotate(5deg);box-shadow:0 30px 60px rgba(0,0,0,.6);z-index:2}
+.polar .scr{aspect-ratio:4/3;background:#1d1d1d;overflow:hidden}.polar .scr svg,.polar .scr img{width:100%;height:100%;object-fit:cover;display:block}
+.tape{position:absolute;width:90px;height:26px;background:rgba(243,239,229,.5);transform:rotate(-38deg);z-index:3}
+.burst{position:absolute;left:34%;top:-2%;width:64%;z-index:1;fill:var(--li);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sphere{position:absolute;right:-4%;bottom:12%;width:30%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 28%,#d9c9ff,var(--la) 40%,#3d2a8a);z-index:3;animation:bob 6s ease-in-out infinite}
+.sphere::after{content:"";position:absolute;inset:-12% -18%;border:5px solid rgba(167,139,250,.6);border-radius:50%;transform:rotate(-20deg) scaleY(.3)}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.oval{position:absolute;left:4%;top:0;border:1.5px solid var(--iv);border-radius:50%;padding:16px 28px;transform:rotate(-8deg);font-size:26px;line-height:1.1;z-index:4;background:var(--bk)}
+.chip{position:absolute;left:6%;bottom:14%;width:64px;height:64px;border-radius:16px;background:#222;border:1px solid #444;display:grid;place-items:center;z-index:4;transform:rotate(-6deg)}
+.chip svg{width:32px;fill:var(--iv)}
+.arrow{position:absolute;left:-4%;top:46%;width:30%;z-index:4;fill:none;stroke:var(--li);stroke-width:3;stroke-linecap:round}
+.pix{position:absolute;right:3%;top:3%;width:76px;display:grid;grid-template-columns:repeat(4,1fr);z-index:1}.pix i{aspect-ratio:1;background:var(--iv)}.pix i:nth-child(3n+1){background:transparent}
+.scroll{position:absolute;bottom:22px;left:50%;text-align:center;font-size:12px;color:var(--gr)}
+.scroll b{display:block;width:22px;height:34px;border:1.5px solid var(--iv);border-radius:12px;margin:0 auto 6px;position:relative}
+.scroll b::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;background:var(--li);border-radius:3px;animation:sc 1.6s infinite}
+@keyframes sc{60%{transform:translateY(10px);opacity:0}}
+
+/* about + skills */
+.ab{display:grid;grid-template-columns:.8fr 1.1fr 1.3fr;gap:clamp(22px,3vw,48px);align-items:center}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 6px 6px;overflow:hidden;background:#2a2a2a;border:6px solid var(--iv);transform:rotate(-2deg);box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.arch img,.arch svg{width:100%;height:100%;object-fit:cover;display:block}
+.ab p{color:var(--gr);margin-top:16px;max-width:42ch}.ab p strong{color:var(--iv)}
+.stats{display:flex;gap:22px;margin-top:26px;border:1px solid #333;border-radius:18px;padding:16px 20px;width:max-content;max-width:100%}
+.stats b{display:block;font:700 34px/1 var(--serif);color:var(--li)}.stats div:nth-child(2) b{color:var(--la)}.stats div:nth-child(3) b{color:var(--or)}.stats span{font-size:13px;color:var(--gr)}
+.sk{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.sk span{display:flex;align-items:center;gap:10px;border:1.5px solid #555;border-radius:99px;padding:10px 20px;font-weight:500;transition:transform .25s,border-color .25s,background .25s;cursor:default}
+.sk span svg{width:20px;height:20px;fill:none;stroke:var(--li);stroke-width:1.8}
+.sk span:hover{transform:translateY(-4px) rotate(-2deg);border-color:var(--li);background:rgba(212,255,69,.08)}
+.sk .lr{border-style:dashed;border-color:var(--la)}.sk .lr svg{stroke:var(--la)}.sk small{display:block;font-size:12px;color:var(--la);line-height:1}
+.ab .sc h2{display:flex;gap:10px}
+
+/* projects */
+.ph{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px;margin-bottom:46px}
+.ph p{color:var(--gr);max-width:40ch;margin-top:12px}
+.ctl{display:flex;gap:10px}.ctl button{width:48px;height:48px;border-radius:50%;background:none;border:1.5px solid var(--iv);color:var(--iv);font-size:20px;cursor:pointer;transition:.2s}.ctl button:hover{background:var(--li);color:var(--bk);border-color:var(--li)}
+.rail{display:flex;gap:clamp(18px,2.6vw,38px);overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 8px 54px;margin:-30px -8px 0;scrollbar-width:thin;scrollbar-color:var(--li) #222}
+.card{flex:0 0 clamp(250px,26vw,330px);scroll-snap-align:start;position:relative;background:var(--iv);color:var(--bk);padding:10px 10px 0;transform:rotate(var(--r)) translateY(var(--y));transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.card.ink{background:#26232e;color:var(--iv)}
+.card:hover,.card:focus-within{transform:rotate(0) translateY(-12px);box-shadow:0 30px 60px rgba(0,0,0,.7)}
+.card .pv{aspect-ratio:4/3.2;overflow:hidden;position:relative}.card .pv svg,.card .pv img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}.card:hover .pv svg,.card:hover .pv img{transform:scale(1.07)}
+.card .no{position:absolute;right:8px;bottom:-14px;font:700 78px/1 var(--serif);font-style:italic;color:var(--bk);opacity:.9;mix-blend-mode:normal;-webkit-text-stroke:2px var(--iv)}
+.card.ink .no{-webkit-text-stroke:2px #26232e;color:var(--ac)}
+.card .tp{position:absolute;left:50%;top:-12px;margin-left:-40px;width:80px;height:24px;background:rgba(212,255,69,.55);transform:rotate(-4deg)}
+.card .tx{padding:18px 8px 16px;position:relative}
+.card h3{font:700 22px/1.1 var(--serif)}.card .tl{font-size:14px;opacity:.75;margin-top:4px}
+.card .de{font-size:14px;margin-top:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s,opacity .45s}
+.card:hover .de,.card:focus-within .de{max-height:130px;opacity:.85}
+.card .go{display:inline-flex;margin-top:12px;gap:8px;align-items:center;font-weight:700;font-size:14px;color:inherit}
+.card .go.soon{opacity:.6;text-decoration:none}
+.card .nt{font-size:12.5px;margin-top:8px;font-style:italic}
+@media (hover:none){.card .de{max-height:none;opacity:.85}}
+
+/* internship */
+.kn{font:700 clamp(64px,14vw,230px)/.85 var(--serif);letter-spacing:-.04em;overflow:hidden;padding-bottom:.08em;margin:6px 0 18px}
+.kn span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}.kn.in span{transform:none}
+.meta{display:flex;flex-wrap:wrap;gap:12px 36px;font-size:19px;margin-bottom:34px}.meta b{color:var(--li)}
+.case{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.file{border:1.5px solid #444;background:var(--bk);padding:26px;position:relative;border-radius:4px}
+.file::before{content:"CASE FILE · INTERNSHIP";position:absolute;top:-12px;left:18px;background:var(--li);color:var(--bk);font-size:11px;font-weight:700;letter-spacing:.08em;padding:3px 10px}
+.file p{color:var(--gr);margin-top:12px}.file p:first-of-type{margin-top:0}
+.tmln{margin-top:22px;border-top:1px dashed #555;padding-top:16px;font-size:14px;color:var(--gr)}
+.pbar{height:8px;background:#2a2a2a;border-radius:8px;margin:8px 0 6px;overflow:hidden}.pbar i{display:block;height:100%;width:0;background:var(--li);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}.pbar.in i{width:100%}
+.learn h3{font:700 24px var(--serif);margin-bottom:14px}
+.learn li{list-style:none;display:flex;gap:12px;align-items:center;padding:7px 0;opacity:0;transform:translateX(-14px);transition:.6s;transition-delay:calc(var(--i)*.07s)}
+.learn.in li{opacity:1;transform:none}
+.learn li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--li);color:var(--bk);display:grid;place-items:center;font-size:13px;font-weight:700}
+.learn li:nth-child(3n+2)::before{background:var(--la)}.learn li:nth-child(3n)::before{background:var(--or)}
+.photo{position:relative;transform:rotate(3deg)}
+.photo .fr{aspect-ratio:4/5;border:10px solid var(--iv);background:#232323;display:grid;place-items:center;text-align:center;color:var(--gr);font-size:14px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.6)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.fine{margin-top:34px;font-size:13px;color:#8a8a8a;max-width:60ch}
+
+/* education */
+.ed{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);margin-top:44px}
+.ec{position:relative;border:1.5px solid #444;border-radius:6px;padding:clamp(24px,3vw,40px);min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--bk)}
+.ec .fm{position:absolute;inset:0;padding:14px;font:italic 500 clamp(26px,3.4vw,46px)/1.2 var(--serif);color:var(--la);opacity:.18;pointer-events:none;background-image:linear-gradient(#ffffff0d 1px,transparent 1px),linear-gradient(90deg,#ffffff0d 1px,transparent 1px);background-size:32px 32px;transition:opacity .4s,transform .6s}
+.ec:hover .fm{opacity:.32;transform:scale(1.03)}
+.ec:nth-child(2) .fm{color:var(--li)}
+.ec .st{position:relative;align-self:flex-start;background:var(--or);color:var(--bk);font-size:13px;font-weight:700;padding:2px 12px;border-radius:99px;margin-bottom:14px}
+.ec:nth-child(2) .st{background:var(--la)}
+.ec h3{position:relative;font:700 clamp(26px,3vw,40px)/1.05 var(--serif)}.ec h3 em{color:var(--li)}
+.ec p{position:relative;color:var(--gr);margin-top:10px;max-width:36ch}
+
+/* contact */
+.ct{min-height:90vh;display:flex;flex-direction:column;justify-content:center;background:var(--bk)!important}
+.ct h2{font-size:clamp(52px,8.6vw,138px);line-height:.98;max-width:9em}
+.mail{display:inline-block;margin-top:36px;font:500 clamp(22px,3.2vw,46px)/1.1 var(--serif);text-decoration:none;border-bottom:3px solid var(--li);word-break:break-all;transition:color .2s}.mail:hover{color:var(--li)}
+.li-l{display:block;margin-top:14px;color:var(--gr)}.li-l:hover{color:var(--li)}
+.laptop{position:absolute;right:6%;bottom:9%;width:clamp(150px,22vw,300px);transform:rotate(-6deg);animation:bob 7s ease-in-out infinite}
+footer{background:var(--bk);padding:24px clamp(22px,5vw,72px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px;color:var(--gr)}
+footer a:hover{color:var(--li)}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
+
+@media (max-width:1100px){.ab{grid-template-columns:1fr 1fr}.ab .sc{grid-column:1/-1}.case{grid-template-columns:1fr 1fr}.case .photo{grid-column:1/-1;max-width:420px}}
+@media (max-width:860px){
+  :root{--sb:0px}
+  .sb{inset:0 0 auto 0;width:100%;height:60px;flex-direction:row;align-items:center;padding:0 18px;border-right:0;border-bottom:1px solid #2a2a2a}
+  .sb nav,.soc{display:none}
+  .sb.open{height:100vh;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding-top:14px}
+  .sb.open nav{display:flex;margin-top:30px;flex:0}.sb.open nav::before,.sb.open nav i{display:none}.sb.open nav a{font-size:22px}
+  .sb.open .soc{display:flex;flex-direction:row;margin-top:30px}
+  .mb{display:block;position:absolute;right:16px;top:10px;background:none;border:1.5px solid var(--iv);color:var(--iv);border-radius:99px;padding:6px 16px;font:700 14px var(--sans);cursor:pointer}
+  main{padding-top:60px}
+  .hero{grid-template-columns:1fr;padding-top:50px}.coll{height:380px}.scroll{display:none}
+  .ab,.case,.ed{grid-template-columns:1fr}.arch{max-width:300px}
+  .laptop{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.hero h1 .m b,.hero h2 span i,.kn span,.learn li{opacity:1;transform:none}.hero h1 svg{stroke-dashoffset:0}.pbar i{width:100%}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+
+<aside class="sb" id="sb">
+  <a class="logo" href="#home" aria-label="Suhana, home">s.</a>
+  <button class="mb" id="mb" aria-expanded="false" aria-controls="sbnav">Menu</button>
+  <nav id="sbnav" aria-label="Main"><i id="prog"></i>
+    <a href="#home" class="on">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="soc">
+    <a href="https://www.linkedin.com/in/suhana-jaganath-9552b6272/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v6M8 7.5v.1M12 16v-6m0 3c0-2 4-3 4 0v3"/></svg></a>
+    <a href="mailto:suhanajaganath24@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg></a>
+  </div>
+</aside>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <span class="pill">Data · Insights · Impact</span><br>
+    <h1 aria-label="Suhana"><span class="m"><b>Suhana</b></span><svg viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16c60-12 120-14 180-8s130 8 212-4"/></svg></h1>
+    <h2 aria-label="Finding the story numbers forgot to tell."><span><i>Finding the story</i></span><span><i><em>numbers</em> forgot</i></span><span><i>to tell.</i></span></h2>
+    <p class="in">A curious mind exploring Data Analytics, visualization and the endless possibilities of technology.</p>
+    <div class="row"><a class="btn pr" href="#projects">Explore my work →</a><a class="btn gh" href="#contact">Get in touch</a></div>
+  </div>
+  <div class="coll" id="coll" aria-hidden="true">
+    <div class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <svg class="burst" viewBox="0 0 200 200"><polygon points="100,0 116,62 176,30 138,84 200,100 138,116 176,170 116,138 100,200 84,138 24,170 62,116 0,100 62,84 24,30 84,62"/></svg>
+    <div class="oval hand">Data<br>+ Me ♥</div>
+    <svg class="arrow" viewBox="0 0 160 60"><path d="M4 50C50 14 100 4 148 22M132 8l18 14-20 10"/></svg>
+    <div class="polar"><span class="tape" style="left:-34px;top:-4px"></span>
+      <div class="scr"><!-- To use a photo: replace this svg with <img src="images/hero.jpg" alt="..."> -->
+        <svg viewBox="0 0 320 240"><rect width="320" height="240" fill="#1b1b1b"/><g fill="#d9d4c6"><rect x="60" y="150" width="28" height="50"/><rect x="100" y="120" width="28" height="80"/><rect x="140" y="90" width="28" height="110"/><rect x="180" y="110" width="28" height="90"/><rect x="220" y="60" width="28" height="140"/></g><polyline points="50,140 110,110 160,80 210,100 260,50" fill="none" stroke="#D4FF45" stroke-width="4"/><path d="M30 210h260" stroke="#555" stroke-width="2"/></svg></div>
+    </div>
+    <div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="14" width="4" height="7"/><rect x="10" y="9" width="4" height="12"/><rect x="17" y="3" width="4" height="18"/></svg></div>
+    <div class="sphere"></div>
+    <svg class="star" style="right:36%;top:6%;width:26px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+  </div>
+  <div class="scroll"><b></b>Scroll to explore</div>
+</section>
+
+<!-- ABOUT + SKILLS -->
+<section id="about" class="ab">
+  <div class="arch rv"><!-- Replace this svg with <img src="images/suhana.jpg" alt="Suhana"> -->
+    <svg viewBox="0 0 300 400" role="img" aria-label="Photo placeholder"><rect width="300" height="400" fill="#2c2c2c"/><circle cx="150" cy="150" r="52" fill="#444"/><path d="M50 400c0-90 50-140 100-140s100 50 100 140z" fill="#444"/><text x="150" y="360" text-anchor="middle" fill="#C7C7C7" font-size="15" font-family="sans-serif">your photo here</text></svg></div>
+  <div class="rv" style="--d:.1s">
+    <h2>About <em>me</em></h2>
+    <p>I'm <strong>Suhana</strong>, a BSc Mathematics and Computer Science student at St Joseph University. I like spotting patterns, solving problems, and turning information into something people can understand.</p>
+    <p>I enjoy both the analytical and the creative side of data. I'm currently doing Data Analytics and Data Science training at IT Vedant, and I'm always keen to learn more.</p>
+    <div class="stats"><div><b data-n="1">0</b><span>Month internship</span></div><div><b data-n="7">0</b><span>Projects</span></div><div><b>∞</b><span>Curiosity</span></div></div>
+    <p class="hand" style="font-size:26px;color:var(--li);transform:rotate(-3deg)">Always learning… ☺</p>
+  </div>
+  <div class="sc rv" id="skills" style="--d:.2s">
+    <h2>Skills <svg class="star" style="position:static;width:26px;margin-top:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg></h2>
+    <div class="sk">
+      <span><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 2 3.5 3 8 3s8-1 8-3V6M4 12c0 2 3.5 3 8 3s8-1 8-3"/></svg>SQL</span>
+      <span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>Microsoft Excel</span>
+      <span><svg viewBox="0 0 24 24"><path d="M5 20V11M11 20V5M17 20v-7"/></svg>Power BI</span>
+      <span><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16l4-5 3 3 5-8"/></svg>Data Visualization</span>
+      <span><svg viewBox="0 0 24 24"><path d="M18 5H6l7 7-7 7h12"/></svg>Statistical Analysis</span>
+      <span class="lr"><svg viewBox="0 0 24 24"><path d="M8 8h5a3 3 0 0 1 0 6H8zM8 14v5M16 10V5"/></svg><i style="font-style:normal">Python<small>currently learning</small></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <span class="blob" style="width:260px;height:260px;right:-100px;top:-90px;opacity:.9" aria-hidden="true"></span>
+  <div class="ph">
+    <div class="rv"><span class="pill">My work</span><h2>Featured<br><em>projects</em></h2><p>Dashboards, visualizations and a web project. Hover or tap a card to see more, or use the arrows.</p></div>
+    <div class="ctl"><button id="prev" aria-label="Previous projects">←</button><button id="next" aria-label="Next projects">→</button></div>
+  </div>
+  <div class="rail" id="rail" tabindex="0" aria-label="Projects, scroll sideways"></div>
+  <p class="hand" style="font-size:26px;color:var(--li);margin-top:6px;transform:rotate(-2deg)">swipe or scroll sideways →</p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <span class="star" style="right:8%;top:90px;width:34px" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg></span>
+  <span class="pill">Experience</span>
+  <div class="kn" id="kn"><span>Kennametal</span></div>
+  <div class="meta rv"><div><b>Role</b> · Audit Intern</div><div><b>Duration</b> · One month</div><div><b>Setting</b> · Corporate workplace</div></div>
+  <div class="case">
+    <div class="file rv">
+      <p class="lead" style="color:var(--iv);font:italic 500 24px/1.2 var(--serif)">My first real look inside a company.</p>
+      <p>I gained exposure to a corporate work environment and worked on audit-related tasks and basic Excel activities.</p>
+      <p>It taught me how work is organised in a professional setting, how to handle information carefully, and what workplace responsibilities look like.</p>
+      <div class="tmln"><div style="display:flex;justify-content:space-between"><span>Day one</span><span>One month</span></div><div class="pbar" id="pbar"><i></i></div>Internship period at Kennametal</div>
+    </div>
+    <div class="learn rv" id="learn" style="--d:.1s"><h3>What I learned</h3><ul>
+      <li style="--i:0">Corporate environment exposure</li><li style="--i:1">Audit-related tasks and processes</li><li style="--i:2">Basic Excel usage</li><li style="--i:3">Attention to detail</li><li style="--i:4">Handling and organising information</li><li style="--i:5">Understanding professional processes</li><li style="--i:6">Communication</li><li style="--i:7">Adaptability</li><li style="--i:8">Workplace responsibilities</li><li style="--i:9">Professional expectations</li></ul></div>
+    <div class="photo rv" style="--d:.2s"><span class="tape" style="left:-24px;top:-8px"></span>
+      <div class="fr"><!-- Replace with <img src="images/kennametal.jpg" alt="Kennametal"> --><span>Internship photo<br>goes here</span></div></div>
+  </div>
+  <p class="fine">Internship experience as a fresher. Descriptions are limited to what I actually did and learned.</p>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <span class="blob" style="width:300px;height:300px;right:-120px;bottom:-110px;background:#d98ad1;opacity:.85" aria-hidden="true"></span>
+  <h2 class="rv">Education &amp; <em>training</em></h2>
+  <div class="ed">
+    <div class="ec rv"><div class="fm" aria-hidden="true">∑ nᵢ · xᵢ<br>∫ f(x) dx<br>π ≈ 3.14159<br>P(A|B)</div><span class="st">Currently pursuing</span><h3>BSc Mathematics &amp; Computer Science</h3><p>St Joseph University</p></div>
+    <div class="ec rv" style="--d:.12s"><div class="fm" aria-hidden="true">SELECT *<br>FROM data<br>GROUP BY pattern;</div><span class="st">Training</span><h3>Data Analytics &amp; <em>Data Science</em></h3><p>IT Vedant · training and learning experience</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="ct">
+  <span class="blob" style="width:420px;height:420px;left:-160px;bottom:-240px" aria-hidden="true"></span>
+  <span class="pill" style="align-self:flex-start">Let's connect</span>
+  <h2 class="rv">Got a project, or just a <em>hello?</em></h2>
+  <div class="rv"><a class="mail" href="mailto:suhanajaganath24@gmail.com">suhanajaganath24@gmail.com</a>
+  <a class="li-l" href="https://www.linkedin.com/in/suhana-jaganath-9552b6272/" target="_blank" rel="noopener">linkedin.com/in/suhana-jaganath-9552b6272 ↗</a>
+  <div class="row"><a class="btn pr" href="mailto:suhanajaganath24@gmail.com">Drop a message →</a><a class="btn gh" href="https://www.linkedin.com/in/suhana-jaganath-9552b6272/" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div>
+  <svg class="laptop" viewBox="0 0 200 140" aria-hidden="true" fill="none" stroke="#F3EFE5" stroke-width="3"><rect x="40" y="10" width="120" height="82" rx="6" fill="#171717"/><path d="M85 55q15 14 30 0" stroke="#D4FF45"/><path d="M84 38v6M116 38v6" stroke="#D4FF45" stroke-linecap="round"/><path d="M15 112h170l-12 14H27z" fill="#F3EFE5"/><path d="M165 15c10-18 40-4 22 16" stroke="#D4FF45"/></svg>
+</section>
+</main>
+<footer><span>© 2026 Suhana · Built with curiosity ♥</span><a href="mailto:suhanajaganath24@gmail.com">suhanajaganath24@gmail.com</a></footer>
+
+<script>
+/* ============ EDIT YOUR PROJECTS HERE ============
+   link: your dashboard / project URL (replace "#")
+   img:  path to a screenshot, e.g. "images/financial.png" (leave "" to keep the placeholder drawing) */
+const PROJECTS=[
+ {t:"Financial Dashboard",tools:"Power BI / Excel",d:"A dashboard exploring financial data in one clear view.",link:"#",img:"",kind:"bars",bg:"#e9e3d3",ac:"#D4FF45",r:-3,y:10},
+ {t:"Blinkit Sales Dashboard",tools:"Power BI",d:"A sales dashboard for a quick-commerce dataset.",link:"#",img:"",kind:"line",bg:"#f0d04a",ac:"#FF784F",r:2.5,y:34},
+ {t:"Amazon Sales Dashboard",tools:"Power BI",d:"A Power BI view of e-commerce sales data.",link:"#",img:"",kind:"donut",bg:"#FF784F",ac:"#D4FF45",r:-2,y:0,ink:1},
+ {t:"Netflix Content Analysis",tools:"Power BI",d:"An analysis of Netflix titles and content.",link:"#",img:"",kind:"grid",bg:"#2b1a1a",ac:"#FF5a5a",r:3,y:28,ink:1},
+ {t:"Swiggy Dashboard",tools:"Power BI",d:"A dashboard exploring food delivery data.",link:"#",img:"",kind:"bars2",bg:"#FF9a4d",ac:"#A78BFA",r:-2.5,y:8},
+ {t:"Training Effectiveness Dashboard",tools:"Power BI",d:"A dashboard looking at how training is performing.",link:"#",img:"",kind:"line2",bg:"#cbb8ff",ac:"#101010",r:2,y:36},
+ {t:"Linguistic Community Website",tools:"HTML · CSS · JavaScript · React · Node.js · MongoDB",d:"A college group project: a community site with discussions, linguistic games and essay submissions.",nt:"My part: frontend for two pages, as part of a team.",link:"#",img:"",kind:"code",bg:"#1d1d1d",ac:"#D4FF45",r:-2,y:12,ink:1}
+];
+function pv(p){
+ if(p.img) return `<img src="${p.img}" alt="${p.t} preview">`;
+ const a=p.ac,w=(b)=>`<svg viewBox="0 0 320 256" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="256" fill="${p.bg}"/>${b}</svg>`;
+ const bars=(h)=>h.map((v,i)=>`<rect x="${28+i*40}" y="${226-v}" width="28" height="${v}" fill="${a}" opacity="${i%2?.65:1}"/>`).join('')+`<path d="M20 228h290" stroke="${a}" stroke-width="2"/>`;
+ return {bars:()=>w(bars([60,110,80,150,100,170,130])),bars2:()=>w(bars([150,100,130,70,110,50,90])),
+ line:()=>w(`<polyline points="20,190 70,150 120,170 170,100 220,120 270,50 305,70" fill="none" stroke="${a}" stroke-width="6" stroke-linejoin="round"/><path d="M20 228h290" stroke="${a}" stroke-width="2"/>`),
+ line2:()=>w(`<polyline points="20,70 80,110 140,90 200,150 260,130 305,190" fill="none" stroke="${a}" stroke-width="6"/><polyline points="20,180 80,160 140,175 200,110 260,120 305,70" fill="none" stroke="${a}" stroke-width="6" stroke-dasharray="2 12" stroke-linecap="round"/>`),
+ donut:()=>w(`<circle cx="160" cy="128" r="62" fill="none" stroke="${a}" stroke-width="34" stroke-dasharray="190 400" transform="rotate(-90 160 128)"/><circle cx="160" cy="128" r="62" fill="none" stroke="#101010" stroke-width="34" stroke-dasharray="80 400" stroke-dashoffset="-195" transform="rotate(-90 160 128)"/>`),
+ grid:()=>w(Array.from({length:40},(_,i)=>`<rect x="${26+(i%10)*28}" y="${50+Math.floor(i/10)*44}" width="22" height="36" fill="${a}" opacity="${[.25,.5,1,.7][(i*7+Math.floor(i/3))%4]}"/>`).join('')),
+ code:()=>w(`<text x="26" y="96" font-size="54" font-weight="700" fill="${a}" font-family="Georgia,serif">&lt;/&gt;</text><rect x="26" y="120" width="190" height="10" fill="${a}"/><rect x="26" y="142" width="260" height="10" fill="${a}" opacity=".6"/><rect x="26" y="164" width="130" height="10" fill="${a}" opacity=".4"/>`)}[p.kind]();
+}
+const rail=document.getElementById('rail');
+PROJECTS.forEach((p,i)=>{
+ const live=p.link&&p.link!=='#', n=String(i+1).padStart(2,'0');
+ const act=live?`<a class="go" href="${p.link}" target="_blank" rel="noopener">View ${p.kind==='code'?'project':'dashboard'} ↗</a>`:`<span class="go soon">Link coming soon</span>`;
+ const c=document.createElement('article');
+ c.className='card'+(p.ink?' ink':'');c.style.cssText=`--r:${p.r}deg;--y:${p.y}px;--ac:${p.ac}`;
+ c.innerHTML=`<span class="tp"></span><div class="pv">${pv(p)}<span class="no" aria-hidden="true">${n}</span></div><div class="tx"><h3>${p.t}</h3><div class="tl">${p.tools}</div><div class="de">${p.d}${p.nt?`<div class="nt">${p.nt}</div>`:''}</div>${act}</div>`;
+ rail.appendChild(c);
+});
+const step=()=>rail.clientWidth*.7;
+document.getElementById('next').onclick=()=>rail.scrollBy({left:step(),behavior:'smooth'});
+document.getElementById('prev').onclick=()=>rail.scrollBy({left:-step(),behavior:'smooth'});
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+ if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');io.unobserve(t);
+ t.querySelectorAll('[data-n]').forEach(c=>{const to=+c.dataset.n;if(reduce){c.textContent=to+'+';return}let n=0;const id=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0')+'+';if(n>=to)clearInterval(id)},600/to)});
+}),{threshold:.2});
+document.querySelectorAll('.rv,#kn,#pbar,#learn').forEach(el=>io.observe(el));
+if(reduce)document.querySelectorAll('[data-n]').forEach(c=>c.textContent=c.dataset.n+'+');
+
+/* active nav + progress line */
+const links=[...document.querySelectorAll('#sbnav a')],prog=document.getElementById('prog');
+const secs=['home','about','skills','projects','experience','education','contact'];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id==='skills'?'about':e.target.id;links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>so.observe(s));
+addEventListener('scroll',()=>{const d=document.documentElement;prog.style.height=(scrollY/(d.scrollHeight-innerHeight)*(prog.parentElement.clientHeight-30))+'px';
+ if(!reduce&&innerWidth>860){const c=document.getElementById('coll');c.style.transform=`translateY(${Math.min(scrollY,600)*-.06}px)`}},{passive:true});
+
+/* mobile menu */
+const sb=document.getElementById('sb'),mb=document.getElementById('mb');
+mb.onclick=()=>{const o=sb.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'};
+links.forEach(a=>a.addEventListener('click',()=>{sb.classList.remove('open');mb.setAttribute('aria-expanded',false);mb.textContent='Menu'}));
+</script>
+</body>
+</html>
